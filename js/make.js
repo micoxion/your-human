@@ -14,9 +14,10 @@ $(function(){
     birthday = new Date(month + " " + day + ", " + year + ", 01:00:00 PST");
 
     age = parseInt(age);
-
+    console.log(gender);
     player = new Person(name, age, birthday, gender);
     localStorage.setItem("player", JSON.stringify(player));
+    localStorage.setItem("currentTime", JSON.stringify(new Date()));
   });
 
 });
