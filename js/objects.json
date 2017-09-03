@@ -1,0 +1,16 @@
+{
+  "woodFloor" : {
+    "name" : "wood floor",
+    "width" : 2,
+    "height" : 2,
+    "surface" : "smooth",
+    "symbol" : ""
+  },
+  "carpetFloor" : {
+    "name" : "carpet floor",
+    "width" : 2,
+    "height" : 2,
+    "surface" : "soft",
+    "symbol" : "▒"
+  }
+}
