@@ -4,7 +4,7 @@
     "width" : 2,
     "height" : 2,
     "surface" : "smooth",
-    "symbol" : ""
+    "symbol" : "■"
   },
   "carpetFloor" : {
     "name" : "carpet floor",

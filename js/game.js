@@ -7,21 +7,9 @@ $(function(){
   var currentTime = new Date(JSON.parse(localStorage.getItem("currentTime")));
 
   //set current-time element value to currentTime
-  $("#current-time").val(currentTime);
-
-  //TODO: decide what timeframe a tick represents... maybe 1 hour?
-  var tick = function() {
-    addHour();
-  }
-
-  //function to increment currentTime
-  var addHour = function() {
-    currentTime.setHours(currentTime.getHours()+1);
-    $("#current-time").text(currentTime);
-  }
 
   var floors = [];
-
+  var map = [];
   $.getJSON("../js/objects.json", function(data) {
 
     $.each(data, function(object) {
@@ -29,16 +17,22 @@ $(function(){
       var width = data[object]['width'];
       var height = data[object]['height'];
       var surface = data[object]['surface'];
+      var symbol = data[object]['symbol'];
 
-
-
-      floors.push(new Ground(name, width, height, surface));
+      floors.push(new Ground(name, width, height, surface, symbol));
     });
   }).done(function() {
-    console.log("success!");
+    console.log("success! Building map:");
+    map = buildGround(floors, 10, 10);
+    console.log(map[0][0].symbol);
+    var row = '';
+    for (var i = 0; i < map.length; i++) {
+      for (var j = 0; j < map[i].length; j++) {
+        row += map[i][j].symbol;
+      }
+      document.write(row);
+      $('body').append("<br/>");
+      row = ''
+    }
   });
-
-  setInterval(function(){
-    tick();
-  }, 1000)
 });
