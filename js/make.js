@@ -17,7 +17,6 @@ $(function(){
     console.log(gender);
     player = new Person(name, age, birthday, gender);
     localStorage.setItem("player", JSON.stringify(player));
-    localStorage.setItem("currentTime", JSON.stringify(new Date()));
     window.location.replace("pages/index.html");
   });
 

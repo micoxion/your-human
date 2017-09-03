@@ -1,3 +1,4 @@
+//quick and dirty ground object type constructer
 function Ground (name, width, height, surface, symbol) {
   this.name = name || "dirt";
   this.width = width || 2;
